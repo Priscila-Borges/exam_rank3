@@ -1,25 +1,37 @@
-# Problem 3: Pattern Tracker
-# Write a function that counts consecutive number pairs in a string where the second digit is 1 greater than the first (0-9).
-# Examples:
-# "abc123def" → 2 (pairs: "12" and "23")
-# "456789" → 5 (pairs: "45", "56", "67", "78")
-# "abc987def" → 1 (pair: "87")
-# "135" → 0 (no consecutive pairs)
+"""
+Problem 3: Pattern Tracker
+Write a function that counts the number of valid consecutive digit pairs
+in a string. A valid pair consists of two adjacent digits where the second
+digit is exactly one greater than the first.
+A 9 followed by a 0 is NOT a valid pair.
 
-def count_consecuive_pairs(string: str) -> int:
-	digits = []
-	for char in string:
-		if char.isdigit():
-			digits.append(char)
-	
-	count = 0
-	for i in range(len(digits) - 1):
-		if int(digits[i + 1]) == int(digits[i]) + 1:
-			count += 1
+Your function must be declared as follows:
 
-	return count
+    def pattern_tracker(text: str) -> int:
 
-print(count_consecuive_pairs("abc123def"))
-print(count_consecuive_pairs("456789"))	
-print(count_consecuive_pairs("abc987def"))	
-print(count_consecuive_pairs("135"))			
+Examples:
+    pattern_tracker("123")        -> 2
+    pattern_tracker("12a34")      -> 2
+    pattern_tracker("987654321")  -> 0
+    pattern_tracker("01234567")   -> 7
+    pattern_tracker("abc")        -> 0
+    pattern_tracker("1a2b3c4")    -> 0
+    pattern_tracker("112233")     -> 2
+"""
+
+def pattern_tracker(text: str) -> int:
+	counter = 0
+	for i in range(len(text) - 1):
+		if text[i].isdigit() and text[i + 1].isdigit():
+			if int(text[i]) + 1 == int(text[i + 1]):
+				counter += 1
+
+	return counter
+
+print(pattern_tracker("123"))
+print(pattern_tracker("12a34"))
+print(pattern_tracker("987654321"))	
+print(pattern_tracker("01234567"))
+print(pattern_tracker("abc"))
+print(pattern_tracker("1a2b3c4"))
+print(pattern_tracker("112233"))
