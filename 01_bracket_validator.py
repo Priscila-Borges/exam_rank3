@@ -1,29 +1,31 @@
-# Problem 1: Bracket Validator
-# Write a function that validates if brackets are properly matched.
-# Valid brackets: (), [], {}
+# Write a function that checks if the brackets in a string are valid.
+
+# A string is valid if every opening bracket has a matching closing bracket
+# in the correct order.
+
+# Allowed brackets: (), [], {}
 # Other characters are ignored
 
 # Return True if valid, False otherwise
-# Examples:
-# "()" → True
-# "()[]{}" → True
-# "{[]}" → True
-# "([)]" → False
-# "(((" → False
-# "abc(def)ghi" → True (non-brackets ignored)
 
-def is_valid_brackets(string: str) -> bool:
+def bracket_validator(s: str) -> bool:
 	stack = []
 	pairs = {")": "(", "]": "[", "}": "{"}
 
-	for char in string:
+	for char in s:
 		if char in pairs.values():
 			stack.append(char)
 		elif char in pairs.keys():
 			if not stack or stack[-1] != pairs[char]:
 				return False
-			stack.pop()
-	return len(stack) == 0	
+			stack.pop()		
+	return len(stack) == 0
 
-print(is_valid_brackets("()[]{}"))
-print(is_valid_brackets("([)]"))
+print(bracket_validator("()"))
+print(bracket_validator("()[]{}"))
+print(bracket_validator("(]"))
+print(bracket_validator("([)]"))
+print(bracket_validator("{[]}"))
+print(bracket_validator("hello(world)"))
+print(bracket_validator("((())"))
+print(bracket_validator(""))
