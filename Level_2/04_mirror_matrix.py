@@ -1,8 +1,10 @@
-# Given a 2D matrix (list of lists), return a new matrix where each row
-# is reversed.
+"""
+Given a 2D matrix (list of lists), return a new matrix where each row
+is reversed.
 
-# Function signature
-# def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:
+Function signature
+def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:
+"""
 
 def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:
 	rev_list = []

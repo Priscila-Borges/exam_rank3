@@ -1,9 +1,10 @@
-# Problem 2: Echo Validate (Palindrome)
-# Write a function that checks if a string is a palindrome,
-# ignoring spaces and case, only consider alphabetic characters
-# for the comparison.
-# Function signature
-# def echo_validator(text: str) -> bool:
+"""
+Write a function that checks if a string is a palindrome,
+ignoring spaces and case, only consider alphabetic characters
+for the comparison.
+Function signature
+def echo_validator(text: str) -> bool:
+"""
 
 def echo_validator(text: str) -> bool:
 	cleaned = ""

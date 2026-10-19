@@ -1,12 +1,14 @@
-# Write a function that checks if the brackets in a string are valid.
+"""
+Write a function that checks if the brackets in a string are valid.
 
-# A string is valid if every opening bracket has a matching closing bracket
-# in the correct order.
+A string is valid if every opening bracket has a matching closing bracket
+in the correct order.
 
-# Allowed brackets: (), [], {}
-# Other characters are ignored
+Allowed brackets: (), [], {}
+Other characters are ignored
 
-# Return True if valid, False otherwise
+Return True if valid, False otherwise
+"""
 
 def bracket_validator(s: str) -> bool:
 	stack = []

@@ -1,5 +1,4 @@
 """
-Problem 3: Pattern Tracker
 Write a function that counts the number of valid consecutive digit pairs
 in a string. A valid pair consists of two adjacent digits where the second
 digit is exactly one greater than the first.
